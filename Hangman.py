@@ -28,11 +28,11 @@ while True:
     print(''.join(hiddenList))
 
     if ''.join(hiddenList)==secret_word:
-        print("\nCongratulations, you found the secret word! It was: " + secret_word + ", GG :D\n")   #vinn animasjon, slipp karakteren fri
+        print("\nCongratulations, you found the secret word! It was: " + secret_word + ", GG :D\n")   #Win animation
         break
 
     if numberOfGuesses==0:
-        print("\nYou are out of guesses. Op fail'd")   #tap animasjon, heng karakteren
+        print("\nYou are out of guesses. Op fail'd")   #Lose animation
         break
 
     del guess
@@ -54,7 +54,7 @@ while True:
         continue
     else:
         numberOfGuesses-=1
-        print("Wrong guess. You have:", numberOfGuesses, "tries left.\n")   #tegn her
+        print("Wrong guess. You have:", numberOfGuesses, "tries left.\n")   #Draw here
 
 
 input("Press a key to exit.")
