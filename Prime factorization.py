@@ -1,20 +1,21 @@
 
 while True:
     
-    inputTall=abs(int(input("\nProvide a positive whole number: ")))
-    tall=int(inputTall)
+    inputNumber=abs(int(input("\nProvide a positive whole number: ")))
+    number=inputNumber
+    halfNumber=round((inputNumber/2)+0.51)
     aList=[]
-    
 
-    for i in range (2, tall):
-        while tall%i==0:
-            tall/=i
+
+    for i in range (2, halfNumber):
+        while number%i==0:
+            number/=i
             aList.append(str(i))
 
 
-    if aList==[] and inputTall!=0:
-        print(inputTall, "is a prime number ;D")
-    elif inputTall==0:
-        print(inputTall, "can't be prime factorized!")
+    if aList==[] and inputNumber!=0:
+        print(inputNumber, "is a prime number ;D")
+    elif inputNumber==0:
+        print(inputNumber, "can't be prime factorized!")
     else:
-        print("Prime factorization gives:", inputTall, "=", ' * '.join(aList))
+        print("Prime factorization gives:", inputNumber, "=", ' * '.join(aList))
