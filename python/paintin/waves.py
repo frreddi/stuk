@@ -27,4 +27,3 @@ for c in range (0, m):
   
 # Holder vinduet med tegningen åpent i 30 sekunder. Ha dette som siste linje i koden din
 time.sleep(30)
-
