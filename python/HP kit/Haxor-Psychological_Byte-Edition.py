@@ -39,4 +39,4 @@ while True:
     
     for n in range (0, rand):
         print(bin(numb));
-        sleep(0.007);
+        sleep(0.007);   #adjust for speed
