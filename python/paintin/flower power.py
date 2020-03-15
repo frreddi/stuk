@@ -1,6 +1,6 @@
 import time
 import math
-from turtle import *
+import turtle
  
 pensize(2)              #setter pennen 2 piksler tykk
 pencolor("purple")      #setter pennefargen til lilla
@@ -29,5 +29,5 @@ for a in range (0, m):
         left(360/n)
     left(360/(n*m))
   
-# Holder vinduet med tegningen åpent i 10 sekunder. Ha dette som siste linje i koden din
+# Holder vinduet med tegningen åpent i 30 sekunder. Ha dette som siste linje i koden din
 time.sleep(30)
