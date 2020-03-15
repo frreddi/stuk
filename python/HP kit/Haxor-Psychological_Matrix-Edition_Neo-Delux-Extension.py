@@ -4,7 +4,7 @@ from math import floor;
 
 
 numb = int(0);
-w = int(152); #adjust for screen-width. minimum w >=90
+w = int(152);   #adjust for screen-width. minimum w >=66
 numb ^= 1<<w;
 
 count1 = {
@@ -107,7 +107,7 @@ while True:
     
     
     print(bin(numb));
-    sleep(0.007);
+    sleep(0.007);   #adjust for speed
     
     
     for n in range (0, len(count1["index"])):
