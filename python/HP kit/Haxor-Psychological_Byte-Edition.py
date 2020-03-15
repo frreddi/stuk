@@ -9,7 +9,7 @@ while tog==0:
         #numb = int(input("Input digits: "));
         tog ^= 1;
     except:
-        print("Only digits");
+        print("Only whole numbers");
         continue;
 
 length = int(len(str(bin(numb)))-2);
