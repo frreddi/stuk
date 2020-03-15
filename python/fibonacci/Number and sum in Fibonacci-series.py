@@ -8,7 +8,7 @@ while True:
     try:
         numb = int(input("Number in the Fibonacci sequence: "));
     except:
-        print("Input digit");
+        print("Input a whole number");
         continue;
     
     if numb>highest:
