@@ -1,29 +1,26 @@
-import time
-import math
-import turtle
- 
-pensize(2)              #setter pennen 2 piksler tykk
-pencolor("purple")      #setter pennefargen til lilla
-bgcolor("green")       #setter bakgrunnsfargen til gul
-hideturtle()            #skjuler pila
- 
-def petal():        #lager et halvt blomsterblad
+from time import sleep
+from math import sin, pi
+from turtle import *
 
-    
+pensize(2)              #pen pixel size
+pencolor("purple")      #pen colour
+bgcolor("green")        #background colour
+hideturtle()            #hides arrow
+
+def petal():        #draw wave
     for a in range (0, 180):
         forward(2)
-        left(4*(math.sin((((math.pi/180)*a)-(math.pi/2)))+1))
+        left(4*(sin((((pi/180)*a)-(pi/2)))+1))
 
 
-
-n=int(input("Oppgi antall blader: "))
-m=int(input("Oppgi antall blomster: "))
+n=int(input("Input number of waves: "))
+m=int(input("Input number of figures: "))
 
 for c in range (0, m):
     for d in range(0, n):
         petal()
         left(360/n)
     left(360/(n*m))
-  
-# Holder vinduet med tegningen åpent i 30 sekunder. Ha dette som siste linje i koden din
-time.sleep(30)
+
+#hold open for 30 sec
+sleep(30)
