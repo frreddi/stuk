@@ -17,4 +17,3 @@ while True:
         print(inputNumber, "is a prime number ;D")
     else:
         print("Prime factorization gives:", inputNumber, "=", ' * '.join(aList))
-g
