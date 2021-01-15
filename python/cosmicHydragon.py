@@ -1,6 +1,5 @@
 from math import sqrt,factorial,pi
 
-
 g = 13    #input generator base
 n = 256    #input modular group
 u = 42    #input pick exponent
@@ -43,6 +42,7 @@ while go:
                 elif adminPanel == False:
                     go = False
             break
+    
     if aTier%2 == 0:
         aTier = 0
     styList.append(val)
