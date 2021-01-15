@@ -3,10 +3,9 @@ from math import sqrt,factorial,pi
 g = 13    #input generator base
 n = 256    #input modular group
 u = 42    #input pick exponent
-dif = 1    #input difficulty
+dif = 3    #input difficulty
 
-dif += 1
-dif *= 2
+dif = 2*(dif-1)
 styList = []
 go = True
 spartanEyro = 0
@@ -36,12 +35,14 @@ while go:
                                 break
                         if (styList[index+int(dif/2)-1] == el) and (warMusic == True):
                             adminPanel = False
+                            break
                 
                 if adminPanel == True:
                     aTier -= 1
                 elif adminPanel == False:
                     go = False
             break
+    
     if aTier%2 == 0:
         aTier = 0
     styList.append(val)
