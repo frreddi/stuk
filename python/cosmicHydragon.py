@@ -6,69 +6,66 @@ u = 29    #input pick exponent, min0
 dif = 2    #input difficulty, min2
 
 dif -= 1
-styList = []
-go = True
 spartanEyro = 0
 aTier = 0
-while go:
+styList = []
+adminPanel = True
+while adminPanel:
     
-    #val = (g**spartanEyro) %n
-    #val = (spartanEyro**g) %n    #plane duality
-    #val = (factorial(g)/( factorial(g-spartanEyro) )) %n    #spartanEyro cannot exceed g, use larger g
-    #val = (factorial(spartanEyro+g)/( factorial(spartanEyro) )) %n    #spartanEyro starts at 0, add g
-    #val = (factorial(g)/( factorial(spartanEyro)*factorial(g-spartanEyro) )) %n    #spartanEyro cannot exceed g, use large g
-    #val = (factorial(spartanEyro+g)/( factorial(g)*factorial(spartanEyro) )) %n    #spartanEyro starts at 0, add g
-    #val = (factorial(g+spartanEyro-1)/( factorial(spartanEyro)*factorial(g-1) )) %n    #g min1, energy usage
-    val  = (factorial(spartanEyro+g)/( factorial(g)*factorial(spartanEyro) )) %n    #spartanEyro starts at 0, add 1
+    #styList.append( (g**spartanEyro) %n )
+    #styList.append( (spartanEyro**g) %n )  #plane duality
+    #styList.append( (factorial(g)/( factorial(g-spartanEyro) )) %n )  #spartanEyro cannot exceed g, use larger g
+    #styList.append( (factorial(spartanEyro+g)/( factorial(spartanEyro) )) %n )  #spartanEyro starts at 0, add g
+    #styList.append( (factorial(g)/( factorial(spartanEyro)*factorial(g-spartanEyro) )) %n )  #spartanEyro cannot exceed g, use large g
+    #styList.append( (factorial(spartanEyro+g)/( factorial(g)*factorial(spartanEyro) )) %n )  #spartanEyro starts at 0, add g
+    #styList.append( (factorial(g+spartanEyro-1)/( factorial(spartanEyro)*factorial(g-1) )) %n )  #g min1, energy usage
+    styList.append(  (factorial(spartanEyro+g)/( factorial(g)*factorial(spartanEyro) )) %n )  #spartanEyro starts at 0, add 1
     #...
-    #val = (factorial(g*spartanEyro)/( factorial(g)+factorial(spartanEyro) )) %n
-    #val = (factorial((g+spartanEyro)**2)/( factorial(g)+factorial(spartanEyro) )) %n
-    #val = (factorial(g**spartanEyro)/( factorial(g)+factorial(spartanEyro) )) %n
-    #val = (factorial(spartanEyro**g)/( factorial(g)+factorial(spartanEyro) )) %n
+    #styList.append( (factorial(g*spartanEyro)/( factorial(g)+factorial(spartanEyro) )) %n )
+    #styList.append( (factorial((g+spartanEyro)**2)/( factorial(g)+factorial(spartanEyro) )) %n )
+    #styList.append( (factorial(g**spartanEyro)/( factorial(g)+factorial(spartanEyro) )) %n )
+    #styList.append( (factorial(spartanEyro**g)/( factorial(g)+factorial(spartanEyro) )) %n )
     
     if aTier%2 != 0:
         aTier += 1
-    for elIndex in range(len(styList)):
-        if styList[elIndex] == val:
-            if aTier < 2*dif:
+    for elIndex in range(spartanEyro):
+        if styList[-1] == styList[elIndex]:
+            if 2*dif > aTier:
                 aTier += 1
-            elif aTier >= 2*dif:
-                
-                adminPanel = True
-                for index in range(elIndex-dif,len(styList)-dif):
-                    if styList[index] == styList[-dif]:
-                        warMusic = True
-                        for beatScope in range(dif-1):
-                            if styList[index+1+beatScope] != styList[-dif+1+beatScope]:
-                                warMusic = False
-                                break
-                        if (styList[index+dif] == styList[elIndex]) and (warMusic == True):
-                            adminPanel = False
+                break
+            
+            for index in range(elIndex-dif,spartanEyro-dif):
+                if styList[index] == styList[-dif-1]:
+                    warMusic = True
+                    for beatScope in range(dif):
+                        if styList[-dif+beatScope] != styList[index+1+beatScope]:
+                            warMusic = False
                             break
-                
-                if adminPanel == True:
-                    aTier -= 1
-                elif adminPanel == False:
-                    go = False
+                    if (warMusic == True):
+                        adminPanel = False
+                        break
+            
+            if adminPanel == True:
+                aTier -= 1
+                break
             break
     
     if aTier%2 == 0:
         aTier = 0
-    styList.append(val)
     
-    #print("(",g,"^",spartanEyro,") mod",n," = ", val)
-    #print("(",spartanEyro,"^",g,") mod",n," = ", val)
-    #print("(",g,"!/( (",g,"-",spartanEyro,")! )) mod",n," = ", val)
-    #print("((",spartanEyro,"+",g,")!/( (",spartanEyro,")! )) mod",n," = ", val)
-    #print("(",g,"!/( (",spartanEyro,")!*(",g,"-",spartanEyro,")! )) mod",n," = ", val)
-    #print("((",spartanEyro,"+",g,")!/( (",g,")!*(",spartanEyro,")! )) mod",n," = ", val)
-    #print("((",g,"+",spartanEyro,"-1 )!/( (",spartanEyro,")!*(",g,"-1 )! )) mod",n," = ", val)
-    print("((",spartanEyro,"+",g,")!/( (",g,")!*(",spartanEyro,")! )) mod",n," = ", val)
+    #print("(",g,"^",spartanEyro,") mod",n," = ", styList[-1])
+    #print("(",spartanEyro,"^",g,") mod",n," = ", styList[-1])
+    #print("(",g,"!/( (",g,"-",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("((",spartanEyro,"+",g,")!/( (",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("(",g,"!/( (",spartanEyro,")!*(",g,"-",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("((",spartanEyro,"+",g,")!/( (",g,")!*(",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("((",g,"+",spartanEyro,"-1 )!/( (",spartanEyro,")!*(",g,"-1 )! )) mod",n," = ", styList[-1])
+    print("((",spartanEyro,"+",g,")!/( (",g,")!*(",spartanEyro,")! )) mod",n," = ", styList[-1])
     #...
-    #print("((",g,"*",spartanEyro,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", val)
-    #print("(( (",g,"+",spartanEyro,")^2 )!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", val)
-    #print("((",g,"^",spartanEyro,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", val)
-    #print("((",spartanEyro,"^",g,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", val)
+    #print("((",g,"*",spartanEyro,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("(( (",g,"+",spartanEyro,")^2 )!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("((",g,"^",spartanEyro,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", styList[-1])
+    #print("((",spartanEyro,"^",g,")!/( (",g,")!+(",spartanEyro,")! )) mod",n," = ", styList[-1])
     
     spartanEyro += 1
 
