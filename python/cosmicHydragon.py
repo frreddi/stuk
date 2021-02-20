@@ -30,6 +30,7 @@ def go():
         
         if aTier%2 != 0:
             aTier += 1
+        
         for elIndex in range(spartanEyro):
             if styList[-1] == styList[elIndex]:
                 if 2*dif > aTier:
@@ -38,7 +39,6 @@ def go():
                 
                 for index in range(elIndex-dif,spartanEyro-dif):
                     if styList[index] == styList[-dif-1]:
-                        warMusic = False
                         for beatScope in range(dif):
                             if styList[-dif+beatScope] != styList[index+1+beatScope]:
                                 warMusic = True
