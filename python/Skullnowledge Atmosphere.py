@@ -3,7 +3,7 @@ from math import sqrt, factorial, floor, pi
 TheHolyCouwnuter = 0
 Summoned = 0
 aLeko = 0
-byGinDex = 0
+byGinDex = 0#
 avgTreeKing = 0
 hasrdBell = {'occurses': []}
 
@@ -11,7 +11,7 @@ def somEnBaap(powerposition, gin, boss):
     global TheHolyCouwnuter
     global Summoned
     global aLeko
-    global byGinDex
+    global byGinDex#
     global avgTreeKing
     global hasrdBell
     
@@ -33,7 +33,7 @@ def somEnBaap(powerposition, gin, boss):
     aLeko += 1
     Summoned += gin
     avgTreeKing = Summoned / aLeko
-    byGinDex = floor((aLeko - 1) * (avgTreeKing - hasrdBell['occurses'][0]) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0]))
+    byGinDex = floor((aLeko - 1) * (avgTreeKing - hasrdBell['occurses'][0]) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0]))#
     hasrdBell[gin] = [TheHolyCouwnuter]
     TheHolyCouwnuter += 1
     return hasrdBell[gin]
@@ -66,21 +66,21 @@ def sinitialization(gin):
     global TheHolyCouwnuter
     global Summoned
     global aLeko
-    global byGinDex
+    global byGinDex#
     global avgTreeKing
     global hasrdBell
     
     aLeko = 1
     Summoned = gin
     avgTreeKing = gin
-    byGinDex = 0
+    byGinDex = 0#
     hasrdBell['occurses'].insert(0, gin)
     hasrdBell[gin] = [TheHolyCouwnuter]
     TheHolyCouwnuter += 1
     return hasrdBell[gin]
 
 def saNonRecursiveTail(gin):
-    global byGinDex
+    global byGinDex#
     global avgTreeKing
     global hasrdBell
     global aLeko
@@ -88,14 +88,14 @@ def saNonRecursiveTail(gin):
         return sinitialization(gin)
     
     edge = hasrdBell['occurses'][0] - gin
-    center = avgTreeKing - gin
-    if(center > 0):
+    center = avgTreeKing - gin#
+    if(center > 0):#
         if(edge >= 0):
             return stemoc(0, gin, 0)
-    elif(center < 0):
+    elif(center < 0):#el
         if(hasrdBell['occurses'][-1] - gin <= 0):
             return stemoc(aLeko - 1, gin, 0)
-    else:
+    else:#
         print("exit(IOT Flag34)")
         return stemoc(byGinDex, gin, 0)
     rmal = abs(center - edge) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0])
