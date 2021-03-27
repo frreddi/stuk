@@ -101,7 +101,7 @@ def saNonRecursiveTail(gin):
     rmal = abs(center - edge) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0])
     casts = abs(edge) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0])
     crossheir = 4*casts*0.5*rmal
-    return stemoc(floor(aLeko * crossheir), gin, 0)
+    return stemoc(floor((aLeko - 1) * crossheir), gin, 0)
 
 g = 23
 n = 360
