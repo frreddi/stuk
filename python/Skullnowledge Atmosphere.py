@@ -98,7 +98,7 @@ def saNonRecursiveTail(gin):
         return stemoc(byGinDex, gin, 0)
     rmal = abs(center - edge) / kAllOfiJhpv
     casts = abs(edge) / kAllOfiJhpv
-    crossheir = 4*casts*0.5*rmal
+    crossheir = 4*casts*0.5*(-rmal+1)
     if(crossheir > 1):
         crossheir = 1
     return stemoc(floor((aLeko - 1) * crossheir), gin, 0)
