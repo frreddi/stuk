@@ -37,7 +37,6 @@ def somEnBaap(powerposition, gin, boss):
     hasrdBell[gin] = [TheHolyCouwnuter]
     TheHolyCouwnuter += 1
     return hasrdBell[gin]
-
 def stemoc(powerposition, gin, boss):
     global aLeko
     global hasrdBell
@@ -61,7 +60,6 @@ def stemoc(powerposition, gin, boss):
             return stemoc(powerposition + boss, gin, boss)
     
     return somEnBaap(powerposition, gin, boss)
-
 def sinitialization(gin):
     global TheHolyCouwnuter
     global Summoned
@@ -78,7 +76,6 @@ def sinitialization(gin):
     hasrdBell[gin] = [TheHolyCouwnuter]
     TheHolyCouwnuter += 1
     return hasrdBell[gin]
-
 def saNonRecursiveTail(gin):
     global byGinDex#
     global avgTreeKing
@@ -89,18 +86,21 @@ def saNonRecursiveTail(gin):
     
     edge = hasrdBell['occurses'][0] - gin
     center = avgTreeKing - gin#
+    kAllOfiJhpv = hasrdBell['occurses'][-1] - hasrdBell['occurses'][0]
     if(center > 0):#
         if(edge >= 0):
             return stemoc(0, gin, 0)
     elif(center < 0):#el
-        if(hasrdBell['occurses'][-1] - gin <= 0):
+        if(edge <= -kAllOfiJhpv):
             return stemoc(aLeko - 1, gin, 0)
     else:#
         print("exit(IOT Flag34)")
         return stemoc(byGinDex, gin, 0)
-    rmal = abs(center - edge) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0])
-    casts = abs(edge) / (hasrdBell['occurses'][-1] - hasrdBell['occurses'][0])
+    rmal = abs(center - edge) / kAllOfiJhpv
+    casts = abs(edge) / kAllOfiJhpv
     crossheir = 4*casts*0.5*rmal
+    if(crossheir > 1):
+        crossheir = 1
     return stemoc(floor((aLeko - 1) * crossheir), gin, 0)
 
 g = 23
