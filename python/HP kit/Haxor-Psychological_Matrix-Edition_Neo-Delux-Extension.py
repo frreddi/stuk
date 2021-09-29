@@ -55,7 +55,7 @@ while True:
                     numb ^= 1<<count1["index"][n];
                     break;
     
-    if switchType>42 and switchType<70:
+    elif switchType>42 and switchType<=70:
         for n in range (0, len(count2["echos"])):
             if count2["echos"][n]<=0:
                 count2["delay"][n] -= 1;
@@ -68,7 +68,7 @@ while True:
                     numb ^= 1<<count2["index"][n];
                     break;
     
-    if switchType>71 and switchType>83:
+    elif switchType>71 and switchType<=83:
         for n in range (0, len(count3["echos"])):
             if count3["echos"][n]<=0:
                 count3["delay"][n] -= 1;
@@ -81,7 +81,7 @@ while True:
                     numb ^= 1<<count3["index"][n];
                     break;
     
-    if switchType>83 and switchType>94:
+    elif switchType>83 and switchType<=94:
         for n in range (0, len(count4["echos"])):
             if count4["echos"][n]<=0:
                 count4["delay"][n] -= 1;
@@ -93,7 +93,7 @@ while True:
                     count4["delay"][n] = numbOfPrints*2;
                     break;
     
-    if switchType>=94:
+    elif switchType>94:
         for n in range (0, len(count5["echos"])):
             if count5["echos"][n]<=0:
                 count5["delay"][n] -= 1;
